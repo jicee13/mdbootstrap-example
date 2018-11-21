@@ -1,27 +1,38 @@
-# ProjectName
+# MDBootstrap Angular Universal Example
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.5.
+My attempt at a minimal setup to run an Angular Universal app either server-side or with prerendering. I integrated it with [MDBootstrap](https://mdbootstrap.com/), a popular bootstrap library. 
 
-## Development server
+## About
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+I built this mixing and mashing a variety of online tutorials/open source code you can find in the references at the bottom. I wanted to include the prerendering because this allows you to host this website like a static website with the benefits of ssr. Pretty neat.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tough Things This Solves
 
-## Build
+The reason I wanted to integrate *MDBootstrap* with this setup is because the library makes use of `Hammerjs`. To make some scrolling actions work correctly on mobile, this requires you to customize your `Hammerjs` config, seen [here](https://mdbootstrap.com/docs/angular/advanced/mobile/#basic-example). This example doesn't work out of the box so I had to do some fiddling.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Universal Starter has a nice list of _gotchas_ you can find [here](https://github.com/angular/universal/blob/master/docs/gotchas.md).
 
-## Running unit tests
+## Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* `npm install`
 
-## Running end-to-end tests
+## Development (not ssr)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* `ng serve -o`
 
-## Further help
+## Building
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* `npm run build:ssr && npm run serve:ssr` - Compiles and runs the application on a local nodejs server.
+* `npm run build:prerender && http-server ./dist/browser` - Compiles, prerenders, and runs application.
+
+## References
+
+* [MDBootstrap Getting Started](https://mdbootstrap.com/docs/angular/getting-started/angular-universal/)
+* [AngularFirebase Prerendering](https://angularfirebase.com/lessons/angular-6-universal-ssr-prerendering-firebase-hosting/)
+* [AngularFire Prerendering](https://github.com/angular/angularfire2/blob/master/docs/universal/prerendering.md)
+* [Universal Starter](https://github.com/angular/universal-starter)
+
+## Further Help
+
+If you have more questions feel free to reach out [here](https://info.jayce.life)

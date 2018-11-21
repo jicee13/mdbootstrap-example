@@ -1,13 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserTransferStateModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
-
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import * as Hammer from "hammerjs";
+
+import { AppRoutingModule } from './app-routing.module';
+
 
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any> {
@@ -35,7 +38,9 @@ export class MyHammerConfig extends HammerGestureConfig {
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    AppRoutingModule,
+    BrowserTransferStateModule
   ],
   providers: [
     {
