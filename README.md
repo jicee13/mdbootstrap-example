@@ -36,3 +36,6 @@ Universal Starter has a nice list of _gotchas_ you can find [here](https://githu
 ## Further Help
 
 If you have more questions feel free to reach out [here](https://info.jayce.life)
+
+# License
+[![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](https://github.com/jicee13/mdbootstrap-example/blob/master/LICENSE)
